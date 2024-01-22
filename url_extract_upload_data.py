@@ -11,11 +11,11 @@ import os
 load_dotenv()
 
 
-url = 'https://brainlox.com/courses/category/technical'
-reqs = requests.get(url)
+root_url = 'https://brainlox.com/courses/category/technical'
+reqs = requests.get(root_url)
 soup = BeautifulSoup(reqs.text, 'html.parser')
  
-urls = []
+urls = [root_url]
 for link in soup.find_all('a'):
     sub_link = link.get('href')
     if "courses" in sub_link and "-" in sub_link:
@@ -51,10 +51,3 @@ Pc(
 index_name = os.getenv('PINECONE_INDEX')
 
 docsearch = Pinecone.from_documents( docs, embeddings, index_name = index_name )
-
-
-
-
-
-
-
