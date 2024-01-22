@@ -1,0 +1,12 @@
+langchain
+pikepdf
+pypdf
+unstructured
+langchain-community
+unstructured-inference
+python-magic-bin
+protobuf==3.20
+pinecone-client
+python-dotenv
+transformers==4.31.0
+sentence-transformers
